@@ -1,0 +1,38 @@
+<div>
+  <mat-toolbar color="primary">
+    <!-- fxHide.gt-sm="true" -->
+    <div fxShow="true">
+      <button mat-icon-button class="example-icon" (click)="sidenav.toggle()" *ngIf="user && user.isAdmin == 1">
+				<mat-icon>menu</mat-icon>
+			</button>
+    </div>
+
+<!--    <span class="example-spacer"></span>-->
+    <a mat-button class="companyName" routerLink="/">
+      <span>Los Lobos & Los Gatos</span>
+    </a>
+    <span class="example-spacer"></span>
+    <a mat-button routerLink="login"  *ngIf="!user">
+      <mat-icon>login</mat-icon>
+    </a>
+    <a mat-button routerLink="profile"  *ngIf="user">
+      <mat-icon>account_circle</mat-icon>
+    </a>
+    <a mat-button (click)="logout()" *ngIf="user">
+      <mat-icon>exit_to_app</mat-icon>
+    </a>
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="example-container">
+    <!-- fxHide.gt-sm="true" -->
+    <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" >
+      <div fxLayout="column" >
+        <a class="customA" mat-button routerLink="/dashboard" (click)="sidenav.close()"><mat-icon>dashboard</mat-icon> Gerenciar</a>
+        <a class="customA" mat-button routerLink="/dash-animal" (click)="sidenav.close()"><mat-icon>pets</mat-icon> Animais</a>
+        <a class="customA" mat-button routerLink="/dash-humano" (click)="sidenav.close()"><mat-icon>face</mat-icon> Humanos</a>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

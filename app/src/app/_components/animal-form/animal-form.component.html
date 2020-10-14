@@ -1,0 +1,145 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <form [formGroup]="animalForm" >
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Cadastro Pet <mat-icon class="vertical-align-middle padding-bottom-3 mat-primary">pets</mat-icon><mat-icon class=" mat-accent vertical-align-middle padding-bottom-3">favorite</mat-icon></mat-card-title>
+      </mat-card-header>
+      <mat-error *ngIf="error !== ''">
+        {{error}}
+      </mat-error>
+      <form class="example-form">
+        <mat-card-content>
+          <div style="min-width:100%; margin-bottom: 1em">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Nome" [formControl]="a.name">
+            </mat-form-field>
+            <mat-error *ngIf="submitted && a.name.hasError('required')">
+              Informe um nome
+            </mat-error>
+          </div>
+
+
+          <div  style="min-width:100%; margin-bottom: 1em">
+            <mat-form-field class="example-full-width">
+              <textarea matInput placeholder="Descrição" [formControl]="a.description"></textarea>
+            </mat-form-field>
+            <mat-error *ngIf="submitted && a.description.hasError('required')">
+              Informe uma descrição
+            </mat-error>
+          </div>
+
+          <div  style="margin-bottom: 1em">
+            <mat-form-field class="example-full-width">
+              <mat-label>Data de nascimento</mat-label>
+              <input matInput [matDatepicker]="picker" [formControl]="a.birth_date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-error *ngIf="submitted && a.birth_date.hasError('required')">
+              Informe uma data de nascimento
+            </mat-error>
+            <mat-error *ngIf="dateError !== ''">
+              {{dateError}}
+            </mat-error>
+          </div>
+
+          <div>
+            <label  style="display:block; margin-bottom: 0.3em">Data de nascimento aproximada?</label>
+            <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="example-radio-group"
+              [formControl]="a.is_birth_aprox">
+              <mat-radio-button class="example-radio-button" style="display:block; margin-bottom: 0.5em" [value]="1">
+                Sim
+              </mat-radio-button>
+              <mat-radio-button class="example-radio-button" [value]="0">
+                Não
+              </mat-radio-button>
+
+            </mat-radio-group>
+            <mat-error *ngIf="submitted && a.is_birth_aprox.hasError('required')">
+              Informe se a data é aproximada
+            </mat-error>
+          </div>
+          <br>
+          <div>
+            <label>Sexo</label>
+            <br>
+            <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="example-radio-group"
+              [formControl]="a.gender">
+              <mat-radio-button class="example-radio-button" [value]="1">
+                <mat-icon svgIcon="male" class="vertical-align-middle padding-bottom-3"></mat-icon>
+                Macho
+              </mat-radio-button>
+              <br>
+              <mat-radio-button class="example-radio-button" [value]="0">
+                <mat-icon svgIcon="female" class="vertical-align-middle padding-bottom-3"></mat-icon>
+                Fêmea
+              </mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf="submitted && a.gender.hasError('required')">
+              Informe o sexo
+            </mat-error>
+          </div>
+          <br>
+
+          <div class="example-full-width" style="margin-bottom: 2em;">
+            <label>Espécie</label>
+            <br>
+            <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="example-radio-group"
+              [formControl]="a.species">
+              <mat-radio-button class="example-radio-button" [value]="1">
+                <mat-icon svgIcon="cat" class="vertical-align-middle padding-bottom-3"></mat-icon>
+                Felis catus
+              </mat-radio-button>
+              <br>
+              <mat-radio-button class="example-radio-button" [value]="0">
+                <mat-icon svgIcon="dog" class="vertical-align-middle padding-bottom-3"></mat-icon>
+                Canis lupus
+              </mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf="submitted && a.species.hasError('required')">
+              Informe a espécie
+            </mat-error>
+          </div>
+          <div class="example-full-width" style="margin-bottom: 1em; position: relative">
+            <button mat-raised-button color="primary" style="width: 100%">
+              <label>Foto de perfil <mat-icon class="vertical-align-middle padding-bottom-3">attach_file</mat-icon></label>
+            </button>
+            <input type="file" id="fileUpload" name="fileUpload" (change)="fileChangeEvent($event)" accept="image/*" >
+          </div>
+          <div>
+            <image-cropper
+              style="max-width: 100%; margin:0 auto"
+              [imageChangedEvent]="imageChangedEvent"
+              [aspectRatio]="1/1"
+              [maintainAspectRatio]="true"
+              resizeToWidth="565"
+              resizeToHeight="565"
+              format="png"
+              (imageCropped)="imageCropped($event)"
+              (imageLoaded)="imageLoaded()"
+              (cropperReady)="cropperReady()"
+              (loadImageFailed)="loadImageFailed()"
+            ></image-cropper>
+            <img [src]="croppedImage" style="max-width: 100%; margin:0 auto" />
+          </div>
+        </mat-card-content>
+        <button mat-raised-button class="btn-block btn-success" type="submit" (click)="onSubmit()">
+          Cadastrar
+          <mat-icon  class="vertical-align-middle padding-bottom-3">check</mat-icon>
+        </button>
+      </form>
+    </mat-card>
+  </form>
+</div>
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)" size="large"
+  color="#fff" type="square-loader" [fullScreen]="true">
+  <p style="color: white" >
+  </p>
+</ngx-spinner>

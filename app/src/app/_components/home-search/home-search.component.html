@@ -1,0 +1,19 @@
+<div
+  class="search-results"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()"
+>
+  <app-animal-card *ngFor="let a of animals" [animal]="a"></app-animal-card>
+
+</div>
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)" size="large"
+  color="#fff" type="square-loader" [fullScreen]="true">
+  <p style="color: white" >
+  </p>
+</ngx-spinner>
+<div *ngIf="!notEmptyPost" style="text-align: center; margin: 1em; font-weight: bold" >
+  Sem mais resultados...
+</div>

@@ -1,0 +1,59 @@
+
+
+
+<div style="margin:1em;">
+  <mat-card class="example-card center-card-custom">
+
+    <mat-card-content>
+      <div fxLayout="row">
+        <p fxFlex="33%" style="padding:1em 0 0 1em">
+          <strong>{{animal.name}}</strong>
+        </p>
+        <p fxFlex="66%" style="text-align: right; padding:1em 1em 0 0">
+          {{animal.last_interaction_desc}}
+        </p>
+      </div>
+      <div fxLayout="row">
+        <div fxFlex="34%" >
+          <img style="max-width:100%; min-height: 100%" [src]="imgSrc + translateImgSrc(animal.id)">
+        </div>
+        <div fxFlex="66%" style="padding:1em; border-top:solid 1px #ccc">
+          <p class="limit-text-line">
+            {{animal.description}}
+          </p>
+          <div>
+
+            <div *ngIf="animal.species" >
+              <mat-icon class="vertical-align-middle padding-bottom-3" svgIcon="cat" ></mat-icon>
+              &nbsp; Felis catus <br>
+            </div>
+
+            <div *ngIf="!animal.species" >
+              <mat-icon class="vertical-align-middle padding-bottom-3" svgIcon="dog" ></mat-icon>
+              &nbsp; Lupus canis <br>
+            </div>
+
+            <div  *ngIf="animal.gender">
+              <mat-icon class="vertical-align-middle padding-bottom-3" svgIcon="male"></mat-icon>
+              &nbsp;&nbsp; Macho <br>
+            </div>
+
+            <div *ngIf="!animal.gender" >
+              <mat-icon class="vertical-align-middle padding-bottom-3" svgIcon="female" ></mat-icon>
+              &nbsp;&nbsp; Fêmea <br>
+            </div>
+
+            <mat-icon class="vertical-align-middle padding-bottom-3">today</mat-icon> &nbsp;&nbsp;{{animal.years}}
+            <br>
+            <div style="text-align: right">
+              <button mat-raised-button color="primary">Mais info...</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </mat-card-content>
+
+  </mat-card>
+</div>
