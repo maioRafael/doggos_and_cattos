@@ -25,6 +25,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { AnimalFormConfirmDialogComponent } from './_components/animal-form-confirm-dialog/animal-form-confirm-dialog.component';
+import { AnimalDetailsComponent } from './_components/animal-details/animal-details.component';
+import { ConfirmationDialogComponent } from './_components/confirmation-dialog/confirmation-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +38,10 @@ import { ImageCropperModule } from 'ngx-image-cropper';
     AnimalCardComponent,
     DashHumanoComponent,
     DashAnimalComponent,
-    AnimalFormComponent
+    AnimalFormComponent,
+    AnimalFormConfirmDialogComponent,
+    AnimalDetailsComponent,
+    ConfirmationDialogComponent,
   ],
   imports: [
     BrowserModule,

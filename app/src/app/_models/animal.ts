@@ -12,5 +12,6 @@ export class Animal {
   updated_at?: Date;
   years?: number;
   last_interaction_desc?: string;
-  base64img?: string
+  base64img?: string;
+  deleted?: boolean
 }

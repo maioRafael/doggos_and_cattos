@@ -10,7 +10,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ec56b8b-2f34-4dee-a991-ca6fd7134f61" name="Default Changelist" comment="" />
+    <list default="true" id="4ec56b8b-2f34-4dee-a991-ca6fd7134f61" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/app/Http/Controllers/Api/AnimalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/app/Http/Controllers/Api/AnimalController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/public/assets/img/animals/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/api/public/assets/img/animals/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/public/assets/img/animals/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/api/public/assets/img/animals/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/public/assets/img/animals/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/api/public/assets/img/animals/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/public/assets/img/animals/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/api/public/assets/img/animals/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/public/assets/img/animals/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/api/public/assets/img/animals/5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/public/assets/img/animals/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/api.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +42,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/app" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -179,7 +192,10 @@
       <workItem from="1602281554350" duration="4236000" />
       <workItem from="1602510460940" duration="17896000" />
       <workItem from="1602541936587" duration="5770000" />
-      <workItem from="1602596537382" duration="35546000" />
+      <workItem from="1602596537382" duration="36225000" />
+      <workItem from="1602644990770" duration="7597000" />
+      <workItem from="1602688583356" duration="12902000" />
+      <workItem from="1602779587460" duration="9010000" />
     </task>
     <servers />
   </component>
@@ -199,10 +215,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="432" y="163" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602515026677">
+    <state x="432" y="163" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602693593411">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="432" y="163" key="#com.intellij.execution.impl.EditConfigurationsDialog/1680.-121.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1602515026677" />
+    <state x="432" y="163" key="#com.intellij.execution.impl.EditConfigurationsDialog/1680.-121.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1602693593411" />
     <state x="570" y="259" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602599551776">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -228,18 +244,18 @@
     </state>
     <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1602282017132" />
     <state x="680" y="421" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1680.-121.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1602605627079" />
-    <state x="547" y="104" width="585" height="801" key="find.popup" timestamp="1602634480735">
+    <state x="547" y="104" width="585" height="801" key="find.popup" timestamp="1602784062912">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="547" y="104" width="585" height="801" key="find.popup/1680.-121.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1602634480735" />
-    <state x="496" y="233" key="run.anything.popup" timestamp="1602615829315">
+    <state x="547" y="104" width="585" height="801" key="find.popup/1680.-121.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1602784062912" />
+    <state x="496" y="233" key="run.anything.popup" timestamp="1602780171072">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="496" y="233" key="run.anything.popup/1680.-121.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1602615829315" />
-    <state x="545" y="219" width="672" height="659" key="search.everywhere.popup" timestamp="1602634802462">
+    <state x="496" y="233" key="run.anything.popup/1680.-121.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1602780171072" />
+    <state x="545" y="219" width="672" height="659" key="search.everywhere.popup" timestamp="1602784030804">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1602283719168" />
-    <state x="545" y="219" width="672" height="659" key="search.everywhere.popup/1680.-121.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1602634802462" />
+    <state x="545" y="219" width="672" height="659" key="search.everywhere.popup/1680.-121.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1602784030804" />
   </component>
 </project>

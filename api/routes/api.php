@@ -45,5 +45,7 @@ Route::group([
 ], function() {
     Route::get('/list/{page?}', "App\\Http\\Controllers\\Api\\AnimalController@index");
     Route::get('/{id}', "App\\Http\\Controllers\\Api\\AnimalController@getAnimal");
-    Route::post('/create', "App\\Http\\Controllers\\Api\\AnimalController@createAnimal")->middleware('apiJwt');
+    Route::post('', "App\\Http\\Controllers\\Api\\AnimalController@createAnimal")->middleware('apiJwt');
+    Route::patch('/{id}', "App\\Http\\Controllers\\Api\\AnimalController@updateAnimal")->middleware('apiJwt');
+    Route::delete('/{id}', "App\\Http\\Controllers\\Api\\AnimalController@deleteAnimal")->middleware('apiJwt');
 });

@@ -8,6 +8,7 @@ import { LoginComponent } from './_components/login/login.component';
 import { UserProfileComponent } from './_components/user-profile/user-profile.component';
 import { AuthGuard } from './_helpers/auth.guard';
 import { AnimalFormComponent } from './_components/animal-form/animal-form.component';
+import { AnimalDetailsComponent } from './_components/animal-details/animal-details.component';
 
 export function animalPageMatcher(segments: UrlSegment[]): UrlMatchResult {
   if (segments.length > 0 && segments[0].path === 'animal-form') {
@@ -60,6 +61,10 @@ const routes: Routes = [
     matcher: animalPageMatcher,
     component: AnimalFormComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'animal-details/:id',
+    component: AnimalDetailsComponent,
   }
 
 ];

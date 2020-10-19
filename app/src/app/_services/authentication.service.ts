@@ -27,7 +27,8 @@ export class AuthenticationService {
       {observe: 'response'})
       .pipe(
         catchError(this.erroHandler),
-        map(response => {
+        map((response: any) => {
+          response.body['expiresIn'] =  new Date(new Date().getTime() + response.body.expires_in * 1000);
           localStorage.setItem('currentUser', JSON.stringify(response.body));
           this.currentUserSubject.next(response.body);
           return response;

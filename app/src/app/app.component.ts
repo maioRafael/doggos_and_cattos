@@ -20,6 +20,11 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     this.auth.currentUser.subscribe( value => this.user = value);
+    if (this.user && this.user.expiresIn){
+      if (new Date() > new Date(this.user.expiresIn)){
+        this.logout();
+      }
+    }
     this.matIconRegistry.addSvgIcon(
       "dog",
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/svg/dog.svg")

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://127.0.0.1:8000'
+  apiUrl: 'http://192.168.1.13:8000',
+  imgSrc: 'http://192.168.1.13:8000/assets/img/animals/'
 };
 
 /*

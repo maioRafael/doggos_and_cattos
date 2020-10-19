@@ -15,9 +15,7 @@
     <a mat-button routerLink="login"  *ngIf="!user">
       <mat-icon>login</mat-icon>
     </a>
-    <a mat-button routerLink="profile"  *ngIf="user">
-      <mat-icon>account_circle</mat-icon>
-    </a>
+
     <a mat-button (click)="logout()" *ngIf="user">
       <mat-icon>exit_to_app</mat-icon>
     </a>
@@ -29,6 +27,10 @@
         <a class="customA" mat-button routerLink="/dashboard" (click)="sidenav.close()"><mat-icon>dashboard</mat-icon> Gerenciar</a>
         <a class="customA" mat-button routerLink="/dash-animal" (click)="sidenav.close()"><mat-icon>pets</mat-icon> Animais</a>
         <a class="customA" mat-button routerLink="/dash-humano" (click)="sidenav.close()"><mat-icon>face</mat-icon> Humanos</a>
+        <a class="customA" mat-button routerLink="/profile" (click)="sidenav.close()" *ngIf="user">
+          <mat-icon>account_circle</mat-icon>
+          Perfil
+        </a>
       </div>
     </mat-sidenav>
     <mat-sidenav-content fxFlexFill>

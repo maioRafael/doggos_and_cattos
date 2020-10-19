@@ -15,7 +15,16 @@ export class AnimalService {
   constructor(private http: HttpClient,
               private router: Router) {
   }
-
+  delete(id){
+    return this.http.delete(`${environment.apiUrl}/api/animal/${id}`,
+      {observe: 'response'})
+      .pipe(
+        catchError(this.erroHandler),
+        map( (response: any) => {
+          return response.body;
+        })
+      );
+  }
   paginateAnimal(page: number = 1){
     return this.http.get(`${environment.apiUrl}/api/animal/list/${page}`,
     {observe: 'response'})
@@ -27,8 +36,29 @@ export class AnimalService {
     );
   }
   createAnimal(animal: Animal){
-    return this.http.post(`${environment.apiUrl}/api/animal/create`,
+    return this.http.post(`${environment.apiUrl}/api/animal`,
       animal,
+      {observe: 'response'})
+      .pipe(
+        catchError(this.erroHandler),
+        map( (response: any) => {
+          return response.body;
+        })
+      );
+  }
+  updateAnimal(id, animal: Animal){
+    return this.http.patch(`${environment.apiUrl}/api/animal/${id}`,
+      animal,
+      {observe: 'response'})
+      .pipe(
+        catchError(this.erroHandler),
+        map( (response: any) => {
+          return response.body;
+        })
+      );
+  }
+  getAnimal(id){
+    return this.http.get(`${environment.apiUrl}/api/animal/${id}`,
       {observe: 'response'})
       .pipe(
         catchError(this.erroHandler),

@@ -5,7 +5,7 @@
   [infiniteScrollThrottle]="50"
   (scrolled)="onScroll()"
 >
-  <app-animal-card *ngFor="let a of animals" [animal]="a"></app-animal-card>
+  <app-animal-card *ngFor="let a of animals" [animal]="a" [canManipulate]="canManipulate"></app-animal-card>
 
 </div>
 <ngx-spinner

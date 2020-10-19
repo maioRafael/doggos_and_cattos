@@ -1,5 +1,4 @@
 <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
-  <form [formGroup]="loginForm" >
     <mat-card class="box">
       <mat-card-header>
         <mat-card-title>Membros</mat-card-title>
@@ -7,7 +6,7 @@
       <mat-error *ngIf="error !== ''">
         {{error}}
       </mat-error>
-      <form class="example-form">
+      <form class="example-form" [formGroup]="loginForm" >
         <mat-card-content>
           <mat-form-field class="example-full-width" style="margin-bottom: 1em">
             <input matInput placeholder="Usuário" [formControl]="f.email">
@@ -22,8 +21,7 @@
             </mat-error>
           </mat-form-field>
         </mat-card-content>
-        <button mat-stroked-button color="accent" class="btn-block" type="submit" (click)="onSubmit()">Acessar</button>
+        <button mat-raised-button class="btn-success" type="submit" style="width: 100%" (click)="onSubmit()">Acessar</button>
       </form>
     </mat-card>
-  </form>
 </div>

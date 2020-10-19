@@ -1,13 +1,15 @@
 <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
-  <form [formGroup]="animalForm" >
     <mat-card class="box">
+      <div style="text-align: left;">
+        <mat-icon color="primary" style="cursor:pointer;" (click)="back()">reply</mat-icon>
+      </div>
       <mat-card-header>
         <mat-card-title>Cadastro Pet <mat-icon class="vertical-align-middle padding-bottom-3 mat-primary">pets</mat-icon><mat-icon class=" mat-accent vertical-align-middle padding-bottom-3">favorite</mat-icon></mat-card-title>
       </mat-card-header>
       <mat-error *ngIf="error !== ''">
         {{error}}
       </mat-error>
-      <form class="example-form">
+      <form class="example-form" [formGroup]="animalForm" >
         <mat-card-content>
           <div style="min-width:100%; margin-bottom: 1em">
             <mat-form-field class="example-full-width">
@@ -21,7 +23,7 @@
 
           <div  style="min-width:100%; margin-bottom: 1em">
             <mat-form-field class="example-full-width">
-              <textarea matInput placeholder="Descrição" [formControl]="a.description"></textarea>
+              <textarea matInput placeholder="Descrição" [formControl]="a.description" rows="5"></textarea>
             </mat-form-field>
             <mat-error *ngIf="submitted && a.description.hasError('required')">
               Informe uma descrição
@@ -127,15 +129,15 @@
               (loadImageFailed)="loadImageFailed()"
             ></image-cropper>
             <img [src]="croppedImage" style="max-width: 100%; margin:0 auto" />
+            <img *ngIf="id && noImage" [src]="env.imgSrc + translateImgSrc(id)" style="max-width: 100%; margin:0 auto" />
           </div>
         </mat-card-content>
         <button mat-raised-button class="btn-block btn-success" type="submit" (click)="onSubmit()">
-          Cadastrar
+          {{ id ? 'Alterar' : 'Cadastrar' }}
           <mat-icon  class="vertical-align-middle padding-bottom-3">check</mat-icon>
         </button>
       </form>
     </mat-card>
-  </form>
 </div>
 <ngx-spinner
   bdColor="rgba(0, 0, 0, 0.8)" size="large"

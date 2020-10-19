@@ -1,0 +1,105 @@
+<div class="detail-wrapper" *ngIf="animal">
+  <mat-card>
+    <div style="text-align: left;" style="border-bottom:1px solid #ccc; margin-bottom: 1em">
+      <span style="cursor:pointer;" (click)="back()" >
+        <mat-icon color="primary" class="vertical-align-middle padding-bottom-5">reply</mat-icon> Voltar
+      </span>
+    </div>
+    <mat-card-content >
+
+      <div class="detail-img-wrapper">
+      </div>
+      <div class="profile-pic">
+        <img [src]="env.imgSrc + animal.id + '.png'" class="rounded">
+      </div>
+      <div class="detail-title-wrapper">
+        <span class="detail-title">{{animal.name}}</span>
+        <span class="last-interaction-desc">
+          <mat-icon style="font-size:0.75em" class=" padding-bottom-3">fiber_manual_record</mat-icon>{{animal.last_interaction_desc}}
+        </span>
+      </div>
+<!--      <div style="padding:1em 0; border-top: 1px solid #ccc; margin-top:1em">-->
+<!--        <strong style="color:#091f92">Sobre</strong>-->
+
+<!--      </div>-->
+      <div style="margin-bottom: 1em; ">
+        <button mat-raised-button color="accent" style="border-radius:20px; margin-bottom: 0.5em">
+          <mat-icon>redeem</mat-icon>
+          Enviar presente
+        </button>
+        &nbsp;
+        <button mat-raised-button style="border-radius:20px; background-color:#5cb85c; color:white;">
+          <mat-icon>accessibility_new</mat-icon>
+          Apadrinhar
+        </button>
+        <span class="example-spacer"></span>
+        &nbsp;
+<!--        <button mat-mini-fab color="warn" aria-label="Example icon button with a menu icon">-->
+<!--          <mat-icon>delete</mat-icon>-->
+<!--        </button>-->
+<!--        &nbsp;-->
+<!--        <button mat-mini-fab style="background-color:#5cb85c; color:white;" aria-label="Example icon button with a menu icon">-->
+<!--          <mat-icon>edit</mat-icon>-->
+<!--        </button>-->
+
+      </div>
+      <mat-accordion multi="true">
+        <mat-expansion-panel [expanded]="true" (opened)="panelOpenState[0] = true"
+                             (closed)="panelOpenState[0] = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <strong class="primary-color">Sobre</strong>
+            </mat-panel-title>
+            <mat-panel-description>
+
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p style="text-align: justify">{{animal.description}}</p>
+
+          <div *ngIf="animal.species" >
+            <mat-icon class="vertical-align-middle padding-bottom-3" svgIcon="cat" ></mat-icon>
+            &nbsp; Felis catus <br>
+          </div>
+
+          <div *ngIf="!animal.species" >
+            <mat-icon class="vertical-align-middle padding-bottom-3" svgIcon="dog" ></mat-icon>
+            &nbsp; Lupus canis <br>
+          </div>
+
+          <div  *ngIf="animal.gender">
+            <mat-icon class="vertical-align-middle padding-bottom-3" svgIcon="male"></mat-icon>
+            &nbsp;&nbsp; Macho <br>
+          </div>
+
+          <div *ngIf="!animal.gender" >
+            <mat-icon class="vertical-align-middle padding-bottom-3" svgIcon="female" ></mat-icon>
+            &nbsp;&nbsp; Fêmea <br>
+          </div>
+          <div>
+            <mat-icon class="vertical-align-middle padding-bottom-3">today</mat-icon> &nbsp;&nbsp;{{animal.years}}
+          </div>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="panelOpenState[1]" (opened)="panelOpenState[1] = true"
+                             (closed)="panelOpenState[1] = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <strong class="primary-color">Galeria</strong>
+            </mat-panel-title>
+            <mat-panel-description>
+
+            </mat-panel-description>
+
+          </mat-expansion-panel-header>
+          <button mat-raised-button style="border-radius:20px;" color="primary">
+            <mat-icon>add</mat-icon>
+            Adicionar
+          </button>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card-content>
+
+  </mat-card>
+</div>
+

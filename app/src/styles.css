@@ -71,7 +71,7 @@ body {
 
 .login-wrapper .example-form {
   min-width: 100%;
-  max-width: 300px;
+  max-width: 330px;
   width: 100%;
 }
 
@@ -112,7 +112,9 @@ body {
 }
 
 .center-card-custom{
-  max-width: 680px; margin:0 auto
+  max-width: 680px;
+  margin:0 auto;
+  padding-left:1em;
 }
 .vertical-align-middle {
   vertical-align: middle;
@@ -120,4 +122,19 @@ body {
 
 .padding-bottom-3 {
   padding-bottom: 3px;
+}
+.padding-bottom-5 {
+  padding-bottom: 5px;
+}
+.rounded{
+  border-radius: 50%;
+}
+.primary-color{
+  color:#3f51b5
+}
+.mat-expansion-panel-spacing{
+  margin: 0 !important;
+}
+.mat-expansion-panel-spacing{
+  border-radius: 0 !important;
 }
